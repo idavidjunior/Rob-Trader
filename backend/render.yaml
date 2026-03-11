@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: investment-monitor-backend
+    env: node
+    region: oregon # Choose a region close to your users
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /api/market-summary
+    envVars:
+      - key: PORT
+        value: "3001"
